@@ -2,8 +2,8 @@ import json
 
 from add_book import add_book
 from view_book import view_books
-# from update_book import update_book
-# from remove_book import remove_book
+from update_book import update_book
+#from remove_book import remove_book
 
 class Book:
     book_objects = []
@@ -23,6 +23,12 @@ class Book:
 
     def get_isbn(self):
         return self.__isbn
+    
+    def set_price(self, price):
+        self.__price = price
+        
+    def set_quantity(self, quantity):
+        self.__quantity = quantity
     
     @staticmethod
     def load_book_data():
@@ -53,7 +59,8 @@ class Book:
                 print("\nBook already exists!\n")
                 return
             else:
-                add_book(Book, isbn)
+                add_book(isbn, Book)
+                return
             
     @staticmethod 
     def view_books():
@@ -70,103 +77,16 @@ class Book:
                 for book in Book.book_objects:
                     if get_value in book.title or get_value in book.author or get_value in book.genre or get_value in book.publisher or get_value in str(book.year_of_publication):
                         print(book)
+                        return
                     else:
                         print("\nBook not found\n")
+                        return
     @staticmethod
     def update_book():
         isbn = int(input("Enter Book ISBN:"))
         for book in Book.book_objects:
             if book.get_isbn() == isbn:
-                # title = input("Enter Book title: ")
-                # author = input("Enter Book author: ")
-                # genre = input("Enter Book genre: ")
-                # publisher = input("Enter Book publisher: ")
-                # year_of_publication = int(input("Enter Year of Publication: "))
-                # price = float(input("Enter Book price: "))
-                # quantity = int(input("Enter Book quantity: "))
-                
-                while True:    
-                    title = input("Enter Book title: ")
-                    if title == "":
-                        print("\nInvalid Title! Title can not be empty \n")
-                        continue
-                    elif type(title) != str:
-                        print("\nInvalid Title! Title must be a String.\n")
-                        continue
-                    else:
-                        break
-                
-                while True:    
-                    author = input("Enter Book author: ")
-                    if author == "":
-                        print("\nInvalid Author! can not be empty.\n")
-                        continue
-                    elif type(author) != str:
-                        print("\nInvalid Author! must be a String.\n")
-                        continue
-                    else:
-                        break
-                    
-                while True:    
-                    genre = input("Enter Book genre: ")
-                    if genre == "":
-                        print("\nInvalid Genre! can not be empty.\n")
-                        continue
-                    elif type(genre) != str:
-                        print("\nInvalid Genre! must be a String.\n")
-                        continue
-                    else:
-                        break
-                    
-                while True:    
-                    publisher = input("Enter Book publisher: ")
-                    if publisher == "":
-                        print("\nInvalid Publisher! can not be Empty.\n")
-                        continue
-                    elif type(publisher) != str:
-                        print("\nInvalid Publisher! must be a String.\n")
-                        continue
-                    else:
-                        break
-                    
-                while True:    
-                    year_of_publication = input("Enter Year of Publication: ")
-                    if year_of_publication == None:
-                        print("\nInvalid Year_of_publication! can not be empty.\n")
-                        continue
-                    elif year_of_publication.isnumeric() == False:
-                        print("\nInvalid Year_of_publication! must be an Integer.\n")
-                        continue
-                    else:
-                        year_of_publication = int(year_of_publication)
-                        break
-                    
-                while True:
-                    price = input("Enter Book price: ")
-                    if price.isnumeric() == False or price < 0:
-                        print("\nInvalid Price! must be a positive number.\n")
-                        continue
-                    else:
-                        price = float(price)
-                        break
-                    
-                while True:
-                    quantity = input("Enter Book quantity: ")
-                    if quantity.isnumeric() == False or quantity < 0:
-                        print("\nInvalid Quantity! must be a non-negative integer.\n")
-                        continue
-                    else:
-                        quantity = int(quantity)
-                        break
-                
-                book.title = title
-                book.author = author
-                book.genre = genre
-                book.publisher = publisher
-                book.year_of_publication = year_of_publication
-                book.__price = price
-                book.__quantity = quantity
-                print("\nBook updated successfully!\n")
+                update_book(book)
                 return
         print("\nBook not found!\n")
         
