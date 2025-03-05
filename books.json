@@ -1,0 +1,54 @@
+{
+    "books": [
+        {
+            "ISBN": "9780743273565",
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "genre": "Classic",
+            "publisher": "Scribner",
+            "year_of_publication": 1925,
+            "price": 10.99,
+            "quantity_in_stock": 50
+        },
+        {
+            "ISBN": "9780061120084",
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "genre": "Fiction",
+            "publisher": "HarperCollins",
+            "year_of_publication": 1960,
+            "price": 12.99,
+            "quantity_in_stock": 30
+        },
+        {
+            "ISBN": "9780451524935",
+            "title": "1984",
+            "author": "George Orwell",
+            "genre": "Dystopian",
+            "publisher": "Signet Classic",
+            "year_of_publication": 1949,
+            "price": 9.99,
+            "quantity_in_stock": 25
+        },
+        {
+            "ISBN": "9780141439518",
+            "title": "Pride and Prejudice",
+            "author": "Jane Austen",
+            "genre": "Romance",
+            "publisher": "HarperCollins",
+            "year_of_publication": 1813,
+            "price": 8.99,
+            "quantity_in_stock": 40
+        },
+        {
+            "ISBN": "9780316769488",
+            "title": "The Catcher in the Rye",
+            "author": "J.D. Salinger",
+            "genre": "Literary Fiction",
+            "publisher": "Little, Brown and Company",
+            "year_of_publication": 1951,
+            "price": 11.99,
+            "quantity_in_stock": 20
+        }
+    ]
+}
